@@ -1,10 +1,28 @@
+require 'date'
+
 class KeyGenerator
-attr_accessor  :key
+attr_reader  :key, :date
 
   def initialize
     @key = rand(10000..99999).digits.reverse
     @date = Date.new(2018,5,14).strftime('%e%m%y')
-    #is it really necessary to reverse these again?
+
+  end
+
+  def number_shift_a
+    rotation_a + offset_a
+  end
+
+  def number_shift_b
+    rotation_b + offset_b
+  end
+
+  def number_shift_c
+    rotation_c + offset_c
+  end
+
+  def number_shift_d
+    rotation_d + offset_d
   end
 
   def rotation_a
@@ -52,5 +70,5 @@ attr_accessor  :key
   def offset_d
     offset_digits[3].to_i
   end
-  
+
 end
