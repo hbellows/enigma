@@ -11,5 +11,11 @@ class EncryptTest < Minitest::Test
     assert_equal result, encrypt.split_message(input)
   end
 
+  def test_it_adds_rotation_and_offset
+    encrypt = Encrypt.new
+    
+
+  end
+
 
 end
