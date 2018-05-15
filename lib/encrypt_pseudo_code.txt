@@ -1,0 +1,31 @@
+grab random key number
+  - pull from key_gen file (must require it at top of encrypt file)
+  - make a new instance of key generation (key_generator.new)
+  -
+
+grab offset number
+ - combine file to key_gen file?
+ - if not, do the same as grab random key number
+
+grab message
+ - where is this coming from?
+ - input = @file: File.read('./message.txt' pathname (root folder))
+
+change message input from string to array for each element
+ - .chars (gives an array of characters)
+
+add offset and rotation to get a number
+ - set up something that returns the one number instead of two (this makes the shift easier)
+
+shift letter by appropriate number of rotations and offsets
+ - will need to map through the array and charcter map to determine correct ending point
+ - need to push the final landing spot to new array
+
+determine correct starting point for rotations and offsets
+ -
+
+iterate through entire message and place in local variable
+
+turn message into a string
+
+return encrypted message in encrypted format
