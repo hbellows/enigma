@@ -182,3 +182,5 @@ Application meets all requirements (extensions not required for a 3)
 3: Meets expectations
 2: Below expectations
 1: Well-below expectations
+
+Harper's Policy goes here
