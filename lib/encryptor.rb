@@ -16,6 +16,10 @@ class Encryptor
     #   '&', '*', '()', '[]', ',', '.', '<>', ':', ';', '/', '?', '\\', '|')]
   end
 
+  def split_input
+    split_input = @input.chars
+  end
+
 
 
 

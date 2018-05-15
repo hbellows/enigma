@@ -19,4 +19,9 @@ class EncryptorTest < Minitest::Test
   end
 
   def test_it_can_split_a_message
+    encryptor = Encryptor.new('help me')
+    result = ['h', 'e', 'l', 'p', ' ', 'm', 'e']
+
+    assert_equal result, encryptor.split_input
+  end
 end
