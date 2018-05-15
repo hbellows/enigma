@@ -11,4 +11,12 @@ class EncryptorTest < Minitest::Test
 
     assert_equal 5, encryptor.key.length
   end
+
+  def test_it_can_have_an_input
+    encryptor = Encryptor.new('hello')
+
+    assert_equal 'hello', encryptor.input
+  end
+
+  def test_it_can_split_a_message
 end
