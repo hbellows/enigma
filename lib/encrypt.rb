@@ -1,4 +1,7 @@
 class Encrypt
+  
+
+end
 
  # grab random key number
  # grab offset number
@@ -10,4 +13,3 @@ class Encrypt
  # iterate through entire message and place in local variable
  # Turn message into a string
  # return encrypted message in encrypted format
- 
