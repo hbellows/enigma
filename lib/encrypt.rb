@@ -1,12 +1,18 @@
+require './lib/key_gen'
+
 class Encrypt
-  
+
+  def initialize
+    @key_gen = KeyGenerator.new
+  end
+
+  def split_message(input)
+    input.chars
+  end
 
 end
 
- # grab random key number
- # grab offset number
- # grab message
- # change message input from string to array for each element
+ 
  # add offset and rotation to get a number
  # shift letter by appropriate number of rotations and offsets
  # determine correct starting point for rotations and offsets

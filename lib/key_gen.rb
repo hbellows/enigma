@@ -1,11 +1,12 @@
 require 'date'
+require 'pry'
 
 class KeyGenerator
 attr_reader  :key, :date
 
-  def initialize
-    @key = rand(10000..99999).digits.reverse
-    @date = Date.new(2018,5,14).strftime('%e%m%y')
+  def initialize(key, date)
+    @key = key 
+    @date = date
 
   end
 
@@ -27,7 +28,7 @@ attr_reader  :key, :date
 
   def rotation_a
     a = @key
-    a[0..1].join.to_i
+    a[0..1].join.to_i 
   end
 
   def rotation_b
