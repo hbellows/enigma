@@ -6,17 +6,38 @@ require './lib/encrypt'
 class EncryptTest < Minitest::Test
 
   def test_it_can_split_a_message
-    encrypt = Encrypt.new
-    result = ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"]
+    encrypt = Encrypt.new([1, 2, 3, 4, 5], '140518')
     input = 'hello world'
+    result = ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
+
     assert_equal result, encrypt.split_message(input)
   end
 
-  def test_it_adds_rotation_and_offset
-    encrypt = Encrypt.new
+  def test_it_can_slice_a_message
+    encrypt = Encrypt.new([1, 2, 3, 4, 5], '140518')
+    input = ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
+    result = [['h', 'e', 'l', 'l'], ['o', ' ', 'w', 'o'], ['r', 'l', 'd']]
 
+    assert_equal result, encrypt.slice_input(input)
+  end
+
+  def test_it_can_find_indexes_of_sliced_arrays
+    encrypt = Encrypt.new([1, 2, 3, 4, 5], '140518')
+    input = [['h', 'e', 'l', 'l'], ['o', ' ', 'w', 'o'], ['r', 'l', 'd']]
+    result = [27, 30, 47, 60, 34, 107, 58, 63, 37, 37, 39]
+
+    assert_equal result, encrypt.find_indexes(input)
+  end
+
+  def test_it_can_return_encrypted_message
+    encrypt = Encrypt.new([1, 2, 3, 4, 5], '140518')
+    input = [27, 30, 47, 60, 34, 107, 58, 63, 37, 37, 39]
+    result = 'BEV8Iz6@LLN'
+
+    assert_equal result, encrypt.encrypt_message(input)
 
   end
+
 
 
 end
