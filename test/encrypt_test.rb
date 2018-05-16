@@ -5,13 +5,6 @@ require './lib/encrypt'
 
 class EncryptTest < Minitest::Test
 
-
-  # def test_it_has_a_key
-  #   encrypt = Encrypt.new
-  #
-  #
-  # end
-
   def test_it_can_split_a_message
     encrypt = Encrypt.new([1, 2, 3, 4, 5], '140518')
     input = 'hello world'
