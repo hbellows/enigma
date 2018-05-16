@@ -9,22 +9,6 @@ attr_reader  :key, :date
     @date = date
   end
 
-  def number_shift_a
-    rotation_a + offset_a
-  end
-
-  def number_shift_b
-    rotation_b + offset_b
-  end
-
-  def number_shift_c
-    rotation_c + offset_c
-  end
-
-  def number_shift_d
-    rotation_d + offset_d
-  end
-
   def rotation_a
     a = @key
     a[0..1].join.to_i
@@ -71,4 +55,19 @@ attr_reader  :key, :date
     offset_digits[3].to_i
   end
 
+  def number_shift_a
+    rotation_a + offset_a
+  end
+
+  def number_shift_b
+    rotation_b + offset_b
+  end
+
+  def number_shift_c
+    rotation_c + offset_c
+  end
+
+  def number_shift_d
+    rotation_d + offset_d
+  end
 end
