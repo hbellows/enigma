@@ -1,3 +1,4 @@
+require './test/test_helper'
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/encrypt'
@@ -13,7 +14,7 @@ class EncryptTest < Minitest::Test
 
   def test_it_adds_rotation_and_offset
     encrypt = Encrypt.new
-    
+
 
   end
 
