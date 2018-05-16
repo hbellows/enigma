@@ -28,32 +28,27 @@ class Encrypt
 
   def find_indexes(slice)
     slice.map do |nested|
-      nested.map.with_index do |char, index|
-        if index == 0
-          @dictionary.find_index(char) + key_gen.number_shift_a
-        elsif index == 1
-          @dictionary.find_index(char) + key_gen.number_shift_b
-        elsif index == 2
-          @dictionary.find_index(char) + key_gen.number_shift_c
-        elsif index == 3
-          @dictionary.find_index(char) + key_gen.number_shift_d
-        end
-      end
+      find_new_index(nested)
     end.flatten
   end
 
+  def find_new_index(nested)
+    nested.map.with_index do |char, index|
+      if index == 0
+        @dictionary.find_index(char) + key_gen.number_shift_a
+      elsif index == 1
+        @dictionary.find_index(char) + key_gen.number_shift_b
+      elsif index == 2
+        @dictionary.find_index(char) + key_gen.number_shift_c
+      elsif index == 3
+        @dictionary.find_index(char) + key_gen.number_shift_d
+      end
+    end
+  end
+
   def encrypt_message(nested)
-    # require "pry"; binding.pry
     nested.map do |index|
       @dictionary[index]
     end.join
   end
 end
-
-
-
- # shift letter by appropriate number of rotations and offsets
- # determine correct starting point for rotations and offsets
- # iterate through entire message and place in local variable
- # Turn message into a string
- # return encrypted message in encrypted format
