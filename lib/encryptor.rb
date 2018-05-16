@@ -1,6 +1,7 @@
 require './lib/key_gen'
 
-class Encrypt
+
+class Encryptor
   attr_reader :key_gen
   def initialize(key, date)
     @key_gen = KeyGenerator.new(key, date)
@@ -9,20 +10,13 @@ class Encrypt
                    '?', '\\', '|',' '] * 2
   end
 
-  def encyrpt(input)
-    split = split_message(input)
-    slice = slice_input(split)
-    nested = find_indexes(slice)
-    encrypted = encrypt_message(nested)
-  end
-
   def split_message(input)
     input.chars
   end
 
   def slice_input(split)
-    split.each_slice(4).map do |slice|
-      slice
+    split.each_slice(4).map do |spliced|
+      spliced
     end
   end
 
@@ -52,3 +46,5 @@ class Encrypt
     end.join
   end
 end
+
+
