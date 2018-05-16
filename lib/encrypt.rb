@@ -4,6 +4,8 @@ class Encrypt
 
   def initialize
     @key_gen = KeyGenerator.new
+    @map_2 = [*('a'..'z'), *('A'..'Z'), *(0..9) + ['!', '@', '#', '$', '%', '^',
+      '&', '*', '()', '[]', ',', '.', '<>', ':', ';', '/', '?', '\\', '|']]
   end
 
   def split_message(input)
@@ -12,7 +14,7 @@ class Encrypt
 
 end
 
- 
+
  # add offset and rotation to get a number
  # shift letter by appropriate number of rotations and offsets
  # determine correct starting point for rotations and offsets
