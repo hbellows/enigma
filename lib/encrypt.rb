@@ -12,6 +12,8 @@ class Encrypt
     input.chars
   end
 
+  
+
 end
 
 
