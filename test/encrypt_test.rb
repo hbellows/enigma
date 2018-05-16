@@ -29,6 +29,14 @@ class EncryptTest < Minitest::Test
     assert_equal result, encrypt.find_indexes(input)
   end
 
+  def test_it_can_find_new_index
+    encrypt = Encrypt.new([1, 2, 3, 4, 5], '140518')
+    input = ['h', 'e', 'l', 'l']
+    result = [27, 30, 47, 60]
+
+    assert_equal result, encrypt.find_new_index(input)
+  end
+
   def test_it_can_return_encrypted_message
     encrypt = Encrypt.new([1, 2, 3, 4, 5], '140518')
     input = [27, 30, 47, 60, 34, 107, 58, 63, 37, 37, 39]
