@@ -5,9 +5,8 @@ class KeyGenerator
 attr_reader  :key, :date
 
   def initialize(key, date)
-    @key = key 
+    @key = key
     @date = date
-
   end
 
   def number_shift_a
@@ -28,7 +27,7 @@ attr_reader  :key, :date
 
   def rotation_a
     a = @key
-    a[0..1].join.to_i 
+    a[0..1].join.to_i
   end
 
   def rotation_b
