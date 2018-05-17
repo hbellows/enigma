@@ -1,8 +1,7 @@
 require 'date'
-require 'pry'
 
 class KeyGenerator
-attr_reader  :key, :date
+  attr_reader :key, :date
 
   def initialize(key, date)
     @key = key
