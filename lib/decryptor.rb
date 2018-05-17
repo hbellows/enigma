@@ -1,7 +1,7 @@
 require './lib/key_gen'
 
 
-class Encryptor
+class Decryptor
   attr_reader :key_gen
   def initialize(key, date)
     @key_gen = KeyGenerator.new(key, date)
@@ -11,7 +11,6 @@ class Encryptor
   end
 
   def split_message(input)
-    # require "pry"; binding.pry
     input.chars
   end
 
@@ -29,22 +28,25 @@ class Encryptor
 
   def find_new_index(nested)
     nested.map.with_index do |char, index|
-      # require "pry"; binding.pry
       if index == 0
-        @dictionary.find_index(char) + key_gen.number_shift_a
+        @dictionary.index(char) - key_gen.number_shift_a
       elsif index == 1
-        @dictionary.find_index(char) + key_gen.number_shift_b
+        @dictionary.index(char) - key_gen.number_shift_b
       elsif index == 2
-        @dictionary.find_index(char) + key_gen.number_shift_c
+        @dictionary.index(char) - key_gen.number_shift_c
       elsif index == 3
-        @dictionary.find_index(char) + key_gen.number_shift_d
+        @dictionary.index(char) - key_gen.number_shift_d
       end
     end
   end
 
-  def encrypt_message(nested)
+  def decrypt_message(nested)
     nested.map do |index|
       @dictionary[index]
     end.join
   end
 end
+
+
+
+# '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
